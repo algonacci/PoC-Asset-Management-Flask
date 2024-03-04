@@ -55,7 +55,6 @@ def search_assets():
 
 
 @app.route("/api/assets/search/<int:id>")
-@auth.login_required
 def search_assets_by_id(id):
     assets = read_file_data()
 
