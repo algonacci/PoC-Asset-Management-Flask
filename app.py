@@ -13,6 +13,7 @@ def index():
 
 
 @app.route("/api/assets")
+@auth.login_required
 def get_assets():
     assets = read_file_data()
     response = {
