@@ -1,5 +1,5 @@
 ID,Nama,Deskripsi,Penyusutan,URL Gambar,Harga,Tanggal Pembelian, QR Code Path
-1,Laptop,Kondisi bagus,200000,https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/26/3110cf8b-abf7-4a64-9772-7f99205abce1.jpg,1000000,2022-01-01,
+1,Laptop,Kondisi bagus,200000,https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/26/3110cf8b-abf7-4a64-9772-7f99205abce1.jpg,1000000,2022-01-01,static/qr_codes/asset_1.png
 2,Printer,Baru,100000,https://www.newton.co.id/wp-content/uploads/2018/08/6008831f0e828.jpg,500000,2022-02-15,
 3,Meja,Kondisi bekas,50000,https://images.tokopedia.net/img/cache/700/VqbcmM/2021/3/21/ec551deb-5bec-4684-8427-373b4b9cc033.jpg,300000,2022-03-10,
 4,Kursi,Kondisi sangat baik,80000,https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//107/MTA-7759807/ace_hardware_ace_hardware_kursi_lipat_reclining_-_kursi_malas_-_kursi_santai_full04_emyqag8g.jpg,200000,2022-04-20,
