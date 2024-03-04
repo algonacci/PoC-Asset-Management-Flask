@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "includes/head.html" %}
+
+<body>
+    {% include "components/navbar.html" %}
+
+    <div class="container px-5 py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="#" class="btn btn-primary">
+                    Tambah Aset Baru
+                </a>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Deskripsi</th>
+                            <th>Penyusutan</th>
+                            <th>Gambar</th>
+                            <th>Harga</th>
+                            <th>Harga (Rp)</th>
+                            <th>Tanggal Pembelian</th>
+                            <th>QR Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for asset in assets %}
+                        <tr>
+                            <td>{{ asset.nama }}</td>
+                            <td>{{ asset.deskripsi }}</td>
+                            <td>{{ asset.penyusutan }}</td>
+                            <td><img src="{{ asset.url_gambar }}" alt="{{ asset.nama }}" width="100"></td>
+                            <td>{{ asset.harga }}</td>
+                            <td>{{ asset.harga_rupiah }}</td>
+                            <td>{{ asset.tanggal_pembelian }}</td>
+                            <td>
+                                {% if asset.qr_code_path %}
+                                <a href="/show_qr/{{ asset.id }}" class="btn btn-primary">Lihat QR Code</a>
+                                {% else %}
+                                <button onclick="generateQRCode({{ asset.id }})" class="btn btn-success">Generate QR
+                                    Code</button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function generateQRCode(id) {
+            $.ajax({
+                type: "GET",
+                url: `/generate_qr/${id}`,
+                success: function (data) {
+                    location.reload(); // Reload the page after successfully generating QR code
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
