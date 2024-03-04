@@ -1,7 +1,7 @@
 import os
 from flask_httpauth import HTTPTokenAuth
 
-secret_key = os.getenv("SECRET_KEY")
+secret_key = os.getenv("SECRET_KEY", "secret")
 
 auth = HTTPTokenAuth(scheme="Bearer")
 
