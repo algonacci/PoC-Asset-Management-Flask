@@ -1,6 +1,7 @@
 import qrcode
 from flask import Flask, render_template, jsonify, request, send_file
 from helpers import read_file_data
+from auth import auth
 
 app = Flask(__name__)
 
@@ -25,6 +26,7 @@ def get_assets():
 
 
 @app.route("/api/assets/search")
+@auth.login_required
 def search_assets():
     keyword = request.args.get("keyword")
     assets = read_file_data()
@@ -52,6 +54,7 @@ def search_assets():
 
 
 @app.route("/api/assets/search/<int:id>")
+@auth.login_required
 def search_assets_by_id(id):
     assets = read_file_data()
 
